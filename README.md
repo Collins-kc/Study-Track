@@ -33,4 +33,4 @@ VITE_FIREBASE_APP_ID=
 4. `npm run dev`
 
 ## Design
-Wireframes are in the `docs/` folder. Figma: PASTE_YOUR_FIGMA_LINK_HERE
+Wireframes are in the `docs/` folder. Figma: https://www.figma.com/design/BMJ1aj2eW9hiK3lIhOEUNz/Login?node-id=0-1&t=Rz9RAC2SmqPPIhi7-1
