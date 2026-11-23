@@ -1,9 +1,10 @@
 import Navbar from "../components/Navbar";
 import TaskForm from "../components/TaskForm";
+import TaskItem from "../components/TaskItem";
 import useTasks from "../hooks/useTasks";
 
 export default function Dashboard() {
-  const { tasks, loading, error, addTask } = useTasks();
+  const { tasks, loading, error, addTask, updateTask, deleteTask } = useTasks();
 
   return (
     <>
@@ -18,10 +19,12 @@ export default function Dashboard() {
         )}
         <ul className="space-y-2">
           {tasks.map((t) => (
-            <li key={t.id} className="bg-white p-3 rounded shadow">
-              <p className="font-medium">{t.title}</p>
-              <p className="text-sm text-gray-500">{t.subject} · Due {t.dueDate}</p>
-            </li>
+            <TaskItem
+              key={t.id}
+              task={t}
+              onUpdate={updateTask}
+              onDelete={deleteTask}
+            />
           ))}
         </ul>
       </main>
