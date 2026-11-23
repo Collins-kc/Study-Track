@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,6 +21,16 @@ export default function Login() {
       setError("Invalid email or password.");
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function handleGoogle() {
+    setError("");
+    try {
+      await googleLogin();
+      navigate("/");
+    } catch {
+      setError("Google sign-in failed. Try again.");
     }
   }
 
@@ -45,6 +55,10 @@ export default function Login() {
         <button type="submit" disabled={loading}
           className="w-full bg-blue-600 text-white rounded p-2 hover:bg-blue-700 disabled:opacity-50">
           {loading ? "Logging in..." : "Login"}
+        </button>
+        <button type="button" onClick={handleGoogle}
+          className="w-full bg-orange-500 text-white rounded p-2 hover:bg-orange-600">
+          Continue with Google
         </button>
         <p className="text-sm text-center">
           No account? <Link to="/register" className="text-orange-500 font-medium">Register</Link>
