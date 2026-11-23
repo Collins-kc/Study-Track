@@ -1,16 +1,36 @@
-# React + Vite
+# StudyTrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React web app that helps students plan and track their study tasks.
 
-Currently, two official plugins are available:
+**Live site:** https://study-track-nu-five.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Register, log in and log out with email/password
+- Google sign-in
+- Protected routes (dashboard only for logged-in users)
+- Add, edit, delete and mark study tasks as done
+- Data saved in Firebase Firestore, so tasks stay after refresh
+- Responsive layout with a blue and orange colour scheme
 
-## React Compiler
+## User stories
+1. As a student, I want to register and log in with email or Google so my tasks are private to me.
+2. As a student, I want to add a study task with a subject and due date so I can plan my work.
+3. As a student, I want to mark a task as done so I can see my progress.
+4. As a student, I want to edit or delete a task so my list stays accurate.
+5. As a student, I want to use the app on my phone so I can check tasks anywhere.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
+React (Vite), Tailwind CSS, React Router, Context API, Firebase Authentication and Firestore, Vercel.
 
-## Expanding the ESLint configuration
+## Run locally
+1. `git clone https://github.com/Collins-kc/Study-Track.git`
+2. `cd Study-Track && npm install`
+3. Create a `.env` file with your Firebase keys:
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_APP_ID=
+4. `npm run dev`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Design
+Wireframes are in the `docs/` folder. Figma: PASTE_YOUR_FIGMA_LINK_HERE
