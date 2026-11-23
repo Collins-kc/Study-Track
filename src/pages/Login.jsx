@@ -24,7 +24,7 @@ export default function Login() {
     }
   }
 
-    async function handleGoogle() {
+  async function handleGoogle() {
     setError("");
     try {
       await googleLogin();
@@ -33,6 +33,7 @@ export default function Login() {
       setError("Google sign-in failed. Try again.");
     }
   }
+
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
       <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white p-6 rounded-lg shadow space-y-4">
@@ -55,7 +56,7 @@ export default function Login() {
           className="w-full bg-blue-600 text-white rounded p-2 hover:bg-blue-700 disabled:opacity-50">
           {loading ? "Logging in..." : "Login"}
         </button>
-                <button type="button" onClick={handleGoogle}
+        <button type="button" onClick={handleGoogle}
           className="w-full bg-orange-500 text-white rounded p-2 hover:bg-orange-600">
           Continue with Google
         </button>
